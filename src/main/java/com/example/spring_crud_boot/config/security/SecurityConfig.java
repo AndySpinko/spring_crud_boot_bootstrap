@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.formLogin()
                 // указываем страницу с формой логина
-                //.loginPage("/login")
+                .loginPage("/login")
                 //указываем логику обработки при логине
                 //.successHandler(new LoginSuccessHandler())
                 .successHandler(loginSuccessHandler)
