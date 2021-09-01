@@ -1,35 +1,23 @@
 package com.example.spring_crud_boot.controllers;
 
-import com.example.spring_crud_boot.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.example.spring_crud_boot.model.User;
 
-import java.security.Principal;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
-	private final UserService userService;
-
-	@Autowired
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
-
-
-	@GetMapping(value = "/user")
-	public String getUserPage(ModelMap modelMap, Principal principal) {
-		modelMap.addAttribute("user", userService.loadUserByUsername(principal.getName()));
-		return "userPage";
-	}
-
-	@GetMapping("/{id}")
-	public String show(@PathVariable("id") Long id, ModelMap modelMap) {
-		modelMap.addAttribute("user", userService.getUserById(id));
-		return "userPage";
+	@GetMapping("")
+	public String showUserInfo(@CurrentSecurityContext(expression = "authentication.principal") User principal,
+							   Model model) {
+		model.addAttribute("user", principal);
+		return "fragments/user-info";
 	}
 }

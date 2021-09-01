@@ -2,20 +2,18 @@ package com.example.spring_crud_boot.model;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
-// Этот класс реализует интерфейс GrantedAuthority, в котором необходимо переопределить только один метод getAuthority() (возвращает имя роли).
-// Имя роли должно соответствовать шаблону: «ROLE_ИМЯ», например, ROLE_USER.
 @Entity
-@Table(name="roles")
-public class Role implements GrantedAuthority {
+@Table(name = "roles")
+public final class Role extends AbstractEntity<Integer> implements GrantedAuthority {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    @Column(unique = true)
     private String name;
 
     @ManyToMany(mappedBy = "roles")
@@ -24,17 +22,12 @@ public class Role implements GrantedAuthority {
     public Role() {
     }
 
-    public Role(int id, String name) {
-        this.id = id;
+    public Role(String name) {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Role(Integer id) {
+        this.setId(id);
     }
 
     public String getName() {
@@ -45,16 +38,13 @@ public class Role implements GrantedAuthority {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
     @Override
     public String getAuthority() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Role [id = %d; name = %s;]", this.getId(), name);
     }
 }
