@@ -38,7 +38,6 @@ public class SpringCrudBootApplication implements CommandLineRunner {
 		Role user = new Role("ROLE_USER");
 		roleRepository.save(admin);
 		roleRepository.save(user);
-		roleRepository.save(new Role("ROLE_GUEST"));
 
 		userRepository.save(new User("tom", "chaplin", 43, "admin@mail.ru",
 				passwordEncoder.encode("admin"),
