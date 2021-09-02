@@ -43,7 +43,6 @@ public class SpringCrudBootApplication implements CommandLineRunner {
 				passwordEncoder.encode("admin"),
 				new HashSet<>() {{
 					add(admin);
-					add(user);
 				}}));
 		userRepository.save(new User("jack", "white", 37, "user@mail.ru",
 				passwordEncoder.encode("user"),
