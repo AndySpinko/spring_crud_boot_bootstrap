@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce628ee6-74dd-4614-b657-a02665cb1949" name="Changes" comment="4th commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/handler/AccessDeniedHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/handler/AuthenticationFailureHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/handler/AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/handler/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/config/handler/UrlLogoutSuccessHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spring_crud_boot/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/access-denied-page.html" beforeDir="false" />
-    </list>
+    <list default="true" id="ce628ee6-74dd-4614-b657-a02665cb1949" name="Changes" comment="4th commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +105,7 @@
       <workItem from="1630512493371" duration="835000" />
       <workItem from="1630514399566" duration="7052000" />
       <workItem from="1630521569881" duration="3213000" />
-      <workItem from="1630661847377" duration="999000" />
+      <workItem from="1630661847377" duration="1077000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1630072047077</created>
@@ -172,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630662134312</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="4th commit">
+      <created>1630663295415</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630663295415</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
