@@ -1,6 +1,8 @@
 package com.example.spring_crud_boot.model;
 
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,7 +15,11 @@ import java.util.*;
 
 @Entity
 @Table(name = "users", indexes = {@Index(columnList = "name, last_name ASC")})
-public final class User extends AbstractEntity<Long> implements UserDetails {
+public final class User implements UserDetails {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "name")
     @NotEmpty(message = "Name should not be empty")
@@ -34,7 +40,8 @@ public final class User extends AbstractEntity<Long> implements UserDetails {
     @Positive(message = "Age should not be empty")
     private int age;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @Fetch(FetchMode.JOIN)
     @JoinTable(name = "users_roles")
     private Set<Role> roles = new HashSet<>();
 
@@ -48,6 +55,14 @@ public final class User extends AbstractEntity<Long> implements UserDetails {
         this.email = email;
         this.password = password;
         this.roles = roles;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -144,5 +159,10 @@ public final class User extends AbstractEntity<Long> implements UserDetails {
     public String toString() {
         return String.format("User [id = %d; firstName = %s; lastName = %s; email = %s; password = %s; roles = (%s)]",
                 this.getId(), firstName, lastName, email, password, Collections.singletonList(roles));
+    }
+
+    @Transient
+    public boolean isNew() {
+        return null == getId();
     }
 }

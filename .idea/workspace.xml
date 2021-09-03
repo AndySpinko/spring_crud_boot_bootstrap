@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce628ee6-74dd-4614-b657-a02665cb1949" name="Changes" comment="5th commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/user-addform.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/user-addform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/exception/LoginException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/exception/LoginException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/service/AppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/service/AppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/service/AppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/service/AppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/user-addform.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/user-addform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/layouts/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layouts/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +110,7 @@
       <workItem from="1630521569881" duration="3213000" />
       <workItem from="1630661847377" duration="1077000" />
       <workItem from="1630664425428" duration="54000" />
-      <workItem from="1630667430556" duration="3689000" />
+      <workItem from="1630667430556" duration="5109000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1630072047077</created>
@@ -200,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630667828976</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="5th commit">
+      <created>1630685378455</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1630685378455</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
