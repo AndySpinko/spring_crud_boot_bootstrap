@@ -53,9 +53,8 @@ public class AdminController {
 
     @PatchMapping()
     public String updateUser(@Valid @ModelAttribute("user") User user,
-                             BindingResult bindingResult,
-                             RedirectAttributes redirectAttributes) {
-        appService.updateUser(user, bindingResult, redirectAttributes);
+                             BindingResult bindingResult) {
+        appService.updateUser(user, bindingResult);
 
         return "redirect:/admin";
     }
@@ -68,9 +67,8 @@ public class AdminController {
 
     @PostMapping()
     public String insertUser(@Valid @ModelAttribute("user") User user,
-                             BindingResult bindingResult,
-                             RedirectAttributes redirectAttributes) {
-        appService.insertUser(user, bindingResult, redirectAttributes);
+                             BindingResult bindingResult) {
+        appService.insertUser(user, bindingResult);
 
         return "redirect:/admin";
     }

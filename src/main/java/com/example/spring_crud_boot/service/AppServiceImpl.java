@@ -86,7 +86,7 @@ public class AppServiceImpl implements AppService {
     }
 
     @Override
-    public void insertUser(User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public void insertUser(User user, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             String oldPassword = user.getPassword();
             try {
@@ -95,15 +95,12 @@ public class AppServiceImpl implements AppService {
             } catch (DataIntegrityViolationException e) {
                 user.setPassword(oldPassword);
                 addErrorIfDataIntegrityViolationException(bindingResult);
-                addRedirectAttributesIfErrorsExists(user, bindingResult, redirectAttributes);
             }
-        } else {
-            addRedirectAttributesIfErrorsExists(user, bindingResult, redirectAttributes);
         }
     }
 
     @Override
-    public void updateUser(User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public void updateUser(User user, BindingResult bindingResult) {
         bindingResult = checkBindingResultForPasswordField(bindingResult);
 
         if (!bindingResult.hasErrors()) {
@@ -116,21 +113,13 @@ public class AppServiceImpl implements AppService {
             } catch (DataIntegrityViolationException e) {
                 user.setPassword(oldPassword);
                 addErrorIfDataIntegrityViolationException(bindingResult);
-                addRedirectAttributesIfErrorsExists(user, bindingResult, redirectAttributes);
             }
-        } else {
-            addRedirectAttributesIfErrorsExists(user, bindingResult, redirectAttributes);
         }
     }
 
     private void addErrorIfDataIntegrityViolationException(BindingResult bindingResult) {
         bindingResult.addError(new FieldError(bindingResult.getObjectName(),
                 "email", "E-mail must be unique"));
-    }
-
-    private void addRedirectAttributesIfErrorsExists(User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("user", user);
-        redirectAttributes.addFlashAttribute("bindingResult", bindingResult);
     }
 
     /*
