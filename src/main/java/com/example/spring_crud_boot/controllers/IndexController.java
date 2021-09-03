@@ -28,9 +28,4 @@ public class IndexController {
         appService.authenticateOrLogout(model, session, authenticationException, authenticationName);
         return "index";
     }
-
-    @GetMapping("/access-denied")
-    public String accessDeniedPage() {
-        return "access-denied-page";
-    }
 }

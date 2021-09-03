@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Set;
 
 @Component
-public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     // Spring Security использует объект Authentication, пользователя авторизованной сессии.
     @Override

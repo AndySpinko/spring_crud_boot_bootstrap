@@ -1,10 +1,7 @@
 package com.example.spring_crud_boot.config;
 
 
-import com.example.spring_crud_boot.config.handler.AccessDeniedHandler;
-import com.example.spring_crud_boot.config.handler.AuthenticationFailureHandler;
-import com.example.spring_crud_boot.config.handler.AuthenticationSuccessHandler;
-import com.example.spring_crud_boot.config.handler.UrlLogoutSuccessHandler;
+import com.example.spring_crud_boot.config.handler.LoginSuccessHandler;
 import com.example.spring_crud_boot.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -24,30 +21,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final PasswordEncoder passwordEncoder;
 
     // класс, в котором описана логика перенаправления пользователей по ролям
-    private final AuthenticationSuccessHandler authenticationSuccessHandler;
+    private final LoginSuccessHandler loginSuccessHandler;
 
-    // класс, в котором описана логика при неудачной авторизации
-    private final AuthenticationFailureHandler authenticationFailureHandler;
-
-    // класс, в котором описана логика при удачной авторизации
-    private final UrlLogoutSuccessHandler urlLogoutSuccessHandler;
-
-    // класс, в котором описана логика при отказе в доступе
-    private final AccessDeniedHandler accessDeniedHandler;
 
     @Autowired
     public SecurityConfig(AppService appService,
                           PasswordEncoder passwordEncoder,
-                          AuthenticationSuccessHandler authenticationSuccessHandler,
-                          AuthenticationFailureHandler authenticationFailureHandler,
-                          UrlLogoutSuccessHandler urlLogoutSuccessHandler,
-                          AccessDeniedHandler accessDeniedHandler) {
+                          LoginSuccessHandler loginSuccessHandler) {
         this.appService = appService;
         this.passwordEncoder = passwordEncoder;
-        this.authenticationSuccessHandler = authenticationSuccessHandler;
-        this.authenticationFailureHandler = authenticationFailureHandler;
-        this.urlLogoutSuccessHandler = urlLogoutSuccessHandler;
-        this.accessDeniedHandler = accessDeniedHandler;
+        this.loginSuccessHandler = loginSuccessHandler;
     }
 
     @Override
@@ -66,12 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
                 .anyRequest().authenticated()
                 .and()
-                .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
+                .exceptionHandling();
         http.formLogin()
                 .loginPage("/") // указываем страницу с формой логина
                 .permitAll()  // даем доступ к форме логина всем
-                .successHandler(authenticationSuccessHandler) //указываем логику обработки при удачном логине
-                .failureHandler(authenticationFailureHandler) //указываем логику обработки при неудачном логине
+                .successHandler(loginSuccessHandler) //указываем логику обработки при удачном логине
                 .usernameParameter("email") // Указываем параметры логина и пароля с формы логина
                 .passwordParameter("password");
         http.logout()
@@ -80,7 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .logoutSuccessUrl("/?logout")
-                .logoutSuccessHandler(urlLogoutSuccessHandler)
                 .permitAll();
     }
 }
