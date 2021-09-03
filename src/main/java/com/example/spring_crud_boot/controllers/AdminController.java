@@ -45,7 +45,7 @@ public class AdminController {
         try {
             model.addAttribute("allRoles", appService.findAllRoles());
             model.addAttribute("user", appService.findUser(userId));
-            return "fragments/user-form";
+            return "parts/user-form";
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }

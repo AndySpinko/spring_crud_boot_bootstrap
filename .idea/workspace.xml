@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce628ee6-74dd-4614-b657-a02665cb1949" name="Changes" comment="3rd commit" />
+    <list default="true" id="ce628ee6-74dd-4614-b657-a02665cb1949" name="Changes" comment="3rd commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/access-denied-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/access-denied-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/user-addform.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/user-addform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/user-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/user-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/user-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/user-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/users-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/users-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/SpringCrudBootApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/handler/UrlLogoutSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spring_crud_boot/config/handler/UrlLogoutSuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/access-denied-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/access-denied-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navigation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/user-addform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/user-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/user-info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/users-table.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +127,7 @@
       <workItem from="1630507293165" duration="1540000" />
       <workItem from="1630512493371" duration="835000" />
       <workItem from="1630514399566" duration="7052000" />
-      <workItem from="1630521569881" duration="1841000" />
+      <workItem from="1630521569881" duration="3213000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1630072047077</created>
@@ -148,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630523426062</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="3rd commit">
+      <created>1630563312214</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630563312214</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

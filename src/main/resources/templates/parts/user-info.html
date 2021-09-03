@@ -4,10 +4,10 @@
 <head th:replace="layouts/main :: htmlhead"/>
 <body>
 
-<header th:replace="fragments/header :: header"/>
+<header th:replace="parts/header :: header"/>
 
 <div class="container-fluid d-flex flex-row vh-100 p-0">
-    <div th:replace="fragments/navigation :: navigation(currentPage='user')"/>
+    <div th:replace="parts/navigation :: navigation(currentPage='user')"/>
 
     <div class="flex-grow-1 bg-light p-3">
         <h1>User information-page</h1>
