@@ -2,13 +2,14 @@ package com.example.spring_crud_boot.config;
 
 
 import com.example.spring_crud_boot.config.handler.LoginSuccessHandler;
-import com.example.spring_crud_boot.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
@@ -16,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // сервис, с помощью которого тащим пользователя
-    private final AppService appService;
+    private final UserDetailsService userDetailsService;
 
     private final PasswordEncoder passwordEncoder;
 
@@ -25,17 +26,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
-    public SecurityConfig(AppService appService,
-                          PasswordEncoder passwordEncoder,
-                          LoginSuccessHandler loginSuccessHandler) {
-        this.appService = appService;
+    public SecurityConfig(
+            @Qualifier("appServiceImpl") UserDetailsService userDetailsService,
+            PasswordEncoder passwordEncoder,
+            LoginSuccessHandler loginSuccessHandler) {
+        this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
         this.loginSuccessHandler = loginSuccessHandler;
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(appService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
     @Override

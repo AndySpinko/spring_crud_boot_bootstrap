@@ -39,12 +39,12 @@ public class SpringCrudBootApplication implements CommandLineRunner {
 		roleRepository.save(admin);
 		roleRepository.save(user);
 
-		userRepository.save(new User("tom", "chaplin", 43, "admin@mail.ru",
+		userRepository.save(new User("tom", "chaplin", 42, "admin@mail.ru",
 				passwordEncoder.encode("admin"),
 				new HashSet<>() {{
 					add(admin);
 				}}));
-		userRepository.save(new User("jack", "white", 37, "user@mail.ru",
+		userRepository.save(new User("jack", "white", 46, "user@mail.ru",
 				passwordEncoder.encode("user"),
 				new HashSet<>() {{
 					add(user);
